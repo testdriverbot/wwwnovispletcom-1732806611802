@@ -1,0 +1,17 @@
+version: 4.1.29
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click the play button on the video section.
+    commands:
+      - command: hover-image
+        description: play button on the video section
+        action: click
+  - prompt: >-
+      Assert that the video starts playing successfully.  # Use the content of
+      the file from the environment
+    commands:
+      - command: assert
+        expect: the video is playing
