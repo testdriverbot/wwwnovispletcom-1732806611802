@@ -1,0 +1,24 @@
+version: 4.1.29
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on the language dropdown in the top right corner.
+    commands:
+      - command: hover-text
+        text: Slovenian
+        description: language dropdown in the top right corner
+        action: click
+  - prompt: Select "English" from the dropdown.
+    commands:
+      - command: hover-text
+        text: English
+        description: English option in the language dropdown
+        action: click
+  - prompt: >-
+      Assert that the webpage is translated correctly to English.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: A digital agency where they write new ones online stories
