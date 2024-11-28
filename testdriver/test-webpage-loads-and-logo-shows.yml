@@ -1,0 +1,16 @@
+version: 4.1.29
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Assert that the webpage loads successfully.
+    commands:
+      - command: assert
+        expect: the text "Digitalna agencija" is visible on the webpage
+  - prompt: >-
+      Assert that the logo "noviSplet" is visible on the page.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: the text "noviSplet" is visible on the webpage
