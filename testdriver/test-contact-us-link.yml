@@ -1,0 +1,18 @@
+version: 4.1.29
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Find and click the "KONTAKT" link in the navigation menu.
+    commands:
+      - command: hover-text
+        text: KONTAKT
+        description: KONTAKT link in the navigation menu
+        action: click
+  - prompt: >-
+      Assert that the contact page loads successfully.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: Verovškova 55 1000 Ljubljana
