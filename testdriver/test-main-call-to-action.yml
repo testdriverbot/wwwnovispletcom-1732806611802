@@ -1,0 +1,18 @@
+version: 4.1.29
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on the main call to action button labeled "PREVERI IZDELANE STRANI".
+    commands:
+      - command: hover-text
+        text: PREVERI IZDELANE STRANI
+        description: main call to action button
+        action: click
+  - prompt: >-
+      Assert that the action leads to the expected page or section.  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: the page displays "Izpostavljene reference"
